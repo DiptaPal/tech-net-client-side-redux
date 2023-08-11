@@ -23,6 +23,7 @@ export default function ProductDetails() {
   // //! Temporary code ends here
 
   const {data: product, isLoading, error} = useGetSingleProductQuery(id)
+  console.log(isLoading, error);
 
   const dispatch = useAppDispatch();
 

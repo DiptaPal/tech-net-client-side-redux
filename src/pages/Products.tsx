@@ -2,7 +2,6 @@ import ProductCard from '@/components/ProductCard';
 import { Label } from '@/components/ui/label';
 import { Slider } from '@/components/ui/slider';
 import { Switch } from '@/components/ui/switch';
-import { useToast } from '@/components/ui/use-toast';
 import { useGetProductsQuery } from '@/redux/feature/products/productApi';
 import { setPriceRange, toggleState } from '@/redux/feature/products/productSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
@@ -18,9 +17,8 @@ export default function Products() {
   // }, []);
 
   const {data, isLoading, error} = useGetProductsQuery(undefined);
-  console.log(data);
+  console.log(data, isLoading, error);
 
-  const { toast } = useToast();
 
   const {status, priceRange} = useAppSelector((state) => state.product)
   const dispatch = useAppDispatch();
